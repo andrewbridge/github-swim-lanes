@@ -1,0 +1,9 @@
+{
+  "name": "github-swim-lanes",
+  "version": "0.0.1",
+  "description": "Show GitHub issues in swim lanes",
+  "main": "index.html",
+  "repository": "git@github.com:andrewbridge/github-swim-lanes.git",
+  "author": "Andrew Bridge <andrew@andrewhbridge.co.uk>",
+  "license": "MIT"
+}
