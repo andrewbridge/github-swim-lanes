@@ -13,5 +13,5 @@ $output = curl_exec ($ch); // execute
 curl_close ($ch); // close curl handle
  
 $token = str_replace('&token_type=bearer', '', str_replace('access_token=', '', $output));
-setcookie("GHSwimLaneToken", $token, time()+3600, "/github-swim-lanes/", "andrewbridge.github.io");
+setcookie("GHSwimLaneToken", $token, time()+3600);
 header( 'Location: '.$clientDeets['clientUrl'] ) ;
