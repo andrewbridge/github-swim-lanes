@@ -1,6 +1,6 @@
 <?php
 
-$clientDeets = json_decode(file_get_contents('./clientDeets.json') , true);
+$clientDeets = json_decode(file_get_contents('../clientDeets.json') , true);
  
 $ch = curl_init();                    // initiate curl
 $url = "https://github.com/login/oauth/access_token"; // where you want to post data
