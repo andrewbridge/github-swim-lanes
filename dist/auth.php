@@ -14,5 +14,5 @@ $output = curl_exec ($ch); // execute
 curl_close ($ch); // close curl handle
 
 $token = json_decode($output, true)['access_token'];
-setcookie("GHSwimLaneToken", $token, time()+3600);
+setcookie("GHSwimLanesToken", $token, time()+3600);
 header( 'Location: '.$config['clientUrl'] ) ;
