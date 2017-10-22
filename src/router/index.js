@@ -3,10 +3,11 @@ import Router from 'vue-router';
 import Login from '@/components/Login';
 import Setup from '@/components/Setup';
 import SwimLanes from '@/components/SwimLanes';
+import auth from './auth';
 
 Vue.use(Router);
 
-export default new Router({
+const routes = new Router({
   routes: [
     {
       path: '/',
@@ -25,3 +26,7 @@ export default new Router({
     },
   ],
 });
+
+routes.beforeEach(auth);
+
+export default routes;

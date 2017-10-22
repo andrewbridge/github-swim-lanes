@@ -2,15 +2,18 @@
   <div class="hello">
     <h1>Setup Swim Lanes</h1>
     <input v-model="url" type="url">
+    <input-tag placeholder="Add Lane" :tags="lanes"></input-tag>
     <button type="button" @click="complete" :disabled="!canComplete">Complete Setup</button>
   </div>
 </template>
 
 <script>
   import { mapMutations, mapGetters } from 'vuex';
+  import InputTag from 'vue-input-tag';
   import types from '../store/mutation-types';
 
   export default {
+    components: { InputTag },
     name: 'Setup',
     computed: {
       repo() {
@@ -21,28 +24,25 @@
         return null;
       },
       canComplete() {
-        return this.repo !== null;
+        return this.repo !== null && this.lanes.length > 0;
       },
       ...mapGetters(['isSetup']),
     },
     data() {
       return {
         url: '',
+        lanes: this.$store.state.lanes,
       };
-    },
-    created() {
-      if (this.isSetup) {
-        this.$router.push('lanes');
-      }
     },
     methods: {
       complete() {
         if (this.canComplete) {
           this.setRepo(this.repo);
+          this.setLanes(this.lanes);
           this.$router.push('lanes');
         }
       },
-      ...mapMutations({ setRepo: types.SET_REPO }),
+      ...mapMutations({ setRepo: types.SET_REPO, setLanes: types.SET_LANES }),
     },
   };
 </script>

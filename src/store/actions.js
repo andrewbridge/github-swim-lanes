@@ -1,14 +1,12 @@
 import types from './mutation-types';
 
 export default {
-  listIssues({ getters, state, commit }, filtering) {
+  listIssues({ getters, state, commit }) {
     if (state.isAuthed && getters.isSetup) {
-      console.log(state.gitHub);
-      state.gitHub
-        .getIssues(state.repo.user, state.repo.name)
-        .listIssues(filtering).then((response) => {
-          commit(types.SET_ISSUES, response.data);
-        });
+      const issues = state.gitHub.getIssues(state.repo.user, state.repo.name);
+      state.lanes.forEach(lane => issues
+        .listIssues({ labels: lane })
+        .then(response => commit(types.ADD_ISSUES, response.data)));
     }
   },
 };

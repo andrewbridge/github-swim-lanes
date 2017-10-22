@@ -16,7 +16,9 @@
   "dependencies": {
     "github-api": "^3.0.0",
     "js-cookie": "^2.1.4",
+    "quick-spot": "^1.0.1",
     "vue": "^2.5.2",
+    "vue-input-tag": "^0.0.16",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.0"
   },
