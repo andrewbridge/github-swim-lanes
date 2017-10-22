@@ -2,6 +2,7 @@ import store from '../store';
 
 // Authorisation for the app
 export default (to, from, next) => {
+  console.log(store.state);
   if (store.state.isAuthed === false
     && to.name !== 'login') {
     return next({ name: 'login' });
