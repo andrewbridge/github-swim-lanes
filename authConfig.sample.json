@@ -1,0 +1,6 @@
+//Copy this file (ensure it's below the doc root), add in real details, delete this comment and remove '.sample' from filename
+{
+  "clientId": "SOMEID",
+  "clientSecret": "SOMESECRET",
+  "clientUrl": "SOMEURL"
+}
