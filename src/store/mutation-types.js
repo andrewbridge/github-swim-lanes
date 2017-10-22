@@ -1,0 +1,7 @@
+export default {
+  SET_TOKEN: 'SET_TOKEN',
+  SET_AUTH: 'SET_AUTH',
+  INIT_GITHUB: 'INIT_GITHUB',
+  SET_REPO: 'SET_REPO',
+  SET_ISSUES: 'SET_ISSUES',
+};
