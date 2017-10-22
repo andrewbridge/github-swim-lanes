@@ -98,6 +98,14 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
+    ]),
+    // copy php files
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../src'),
+        to: config.build.assetsRoot,
+        ignore: ['!*.php']
+      }
     ])
   ]
 })
